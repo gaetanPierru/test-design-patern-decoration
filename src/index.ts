@@ -17,8 +17,9 @@ app.use(express.json())
 app.use(cors())
 
 app.use(apiRouter)
+app.get('/', (req, res) => res.json("hello"))
 
 app.use(unexpectedErrorMiddleware)
 
-app.listen(process.env.PORT, () => logger.info('Running.'))
+app.listen(3000, () => logger.info('Running.'))
 
